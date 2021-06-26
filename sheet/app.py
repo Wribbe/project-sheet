@@ -1,8 +1,7 @@
 import os
 
-from flask import Flask, render_template
-
-app = Flask(__name__)
+from sheet.config import get_db, app
+from flask import render_template
 
 @app.route('/')
 def index():
