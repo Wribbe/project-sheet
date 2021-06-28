@@ -24,7 +24,7 @@ def db_init():
     if PATH_DB.is_file():
         return
     with app.app_context():
-        db = get_db()
+        db = db_get()
         with app.open_resource('schema.sql', mode='r') as f:
             db.cursor().executescript(f.read())
         db.commit()
